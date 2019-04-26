@@ -1,4 +1,4 @@
-package jp.co.tis.stc.roboticbase.core.fiware_xperiahello
+package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_conveyer
 
 import android.Manifest
 import android.content.Intent
@@ -191,12 +191,14 @@ class MainActivity : ClientAPIImplActivity(), Mixin {
             val squareMessage = sharedPref?.getString(getString(R.string.settings_item_talk_square_message_key), "") ?: ""
             val circleMessage = sharedPref?.getString(getString(R.string.settings_item_talk_circle_message_key), "") ?: ""
             val crossMessage = sharedPref?.getString(getString(R.string.settings_item_talk_cross_message_key), "") ?: ""
+            val doForwardMessage = sharedPref?.getString(getString(R.string.settings_item_talk_do_forward_message_key), "") ?: ""
 
             val message = when (data?.getStringExtra(OPERATION_RESULT_KEY)) {
                 TRIANGLE_BUTTON -> triangleMessage
                 SQUARE_BUTTON -> squareMessage
                 CIRCLE_BUTTON -> circleMessage
                 CROSS_BUTTON -> crossMessage
+                DO_FORWARD_BUTTON -> doForwardMessage
                 else -> ""
             }
             Log.d(TAG, "msg=$message")

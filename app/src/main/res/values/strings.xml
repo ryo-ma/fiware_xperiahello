@@ -66,6 +66,10 @@
     <string name="settings_item_talk_cross_message_title">Cross Message</string>
     <string name="settings_item_talk_cross_message_default">誘導ロボットを停止します</string>
     <string name="settings_item_talk_cross_message_summary">✕ボタン押下時にロボットが話すメッセージ</string>
+    <string name="settings_item_talk_do_forward_message_key">do_forward_message</string>
+    <string name="settings_item_talk_do_forward_message_title">Do forward Message</string>
+    <string name="settings_item_talk_do_forward_message_default">目的地へ向かいます</string>
+    <string name="settings_item_talk_do_forward_message_summary">ロボットが話すメッセージ</string>
 
     <string name="main_title">RoboticBase-core</string>
     <string name="main_button">デモを\n始める</string>

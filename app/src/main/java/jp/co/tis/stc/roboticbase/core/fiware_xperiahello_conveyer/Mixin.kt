@@ -1,4 +1,4 @@
-package jp.co.tis.stc.roboticbase.core.fiware_xperiahello
+package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_conveyer
 
 interface Mixin {
     val TAG: String
@@ -17,6 +17,8 @@ interface Mixin {
         get() = "square"
     val CIRCLE_BUTTON
         get() = "circle"
+    val DO_FORWARD_BUTTON
+        get() = "do_forward"
     val CROSS_BUTTON
         get() = "cross"
 }

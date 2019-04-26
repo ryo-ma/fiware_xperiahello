@@ -1,4 +1,4 @@
-package jp.co.tis.stc.roboticbase.core.fiware_xperiahello
+package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_conveyer
 
 import android.os.Bundle
 import android.preference.PreferenceFragment

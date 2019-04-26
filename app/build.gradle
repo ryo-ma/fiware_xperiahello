@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "jp.co.tis.stc.roboticbase.core.fiware_xperiahello.conveyer"
+        applicationId "jp.co.tis.stc.roboticbase.core.fiware_xperiahello_conveyer"
         minSdkVersion 26
         targetSdkVersion 27
         versionCode 1
