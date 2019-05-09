@@ -1,4 +1,4 @@
-package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_conveyer
+package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_guide
 
 import android.Manifest
 import android.content.Intent
@@ -198,7 +198,7 @@ class MainActivity : ClientAPIImplActivity(), Mixin {
                 SQUARE_BUTTON -> squareMessage
                 CIRCLE_BUTTON -> circleMessage
                 CROSS_BUTTON -> crossMessage
-                DO_FORWARD_BUTTON -> doForwardMessage
+                DEST1_BUTTON -> doForwardMessage
                 else -> ""
             }
             Log.d(TAG, "msg=$message")

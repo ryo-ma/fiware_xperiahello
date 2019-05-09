@@ -1,4 +1,4 @@
-package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_conveyer
+package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_guide
 
 import android.app.Activity
 import android.app.Application

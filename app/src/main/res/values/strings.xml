@@ -71,7 +71,7 @@
     <string name="settings_item_talk_do_forward_message_default">目的地へ向かいます</string>
     <string name="settings_item_talk_do_forward_message_summary">ロボットが話すメッセージ</string>
 
-    <string name="main_title">RoboticBase-core</string>
+    <string name="main_title">目的地を選択してください</string>
     <string name="main_button">デモを\n始める</string>
     <string name="triangle_button">\u25B3</string>
     <string name="square_button">\u25a2</string>

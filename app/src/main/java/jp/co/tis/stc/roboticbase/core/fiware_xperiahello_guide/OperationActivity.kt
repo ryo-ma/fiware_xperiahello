@@ -1,4 +1,4 @@
-package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_conveyer
+package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_guide
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -19,7 +19,7 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
 class OperationActivity : AppCompatActivity(), Mixin {
-    private var sharedPref : SharedPreferences? = null
+    private var sharedPref: SharedPreferences? = null
     internal var client: MqttAndroidClient? = null
     private var options: MqttConnectOptions? = null
 
@@ -57,17 +57,8 @@ class OperationActivity : AppCompatActivity(), Mixin {
     }
 
     private fun setUpButton() {
-        triangleButton.setOnClickListener {
-            onClickButton(TRIANGLE_BUTTON)
-        }
-        squareButton.setOnClickListener {
-            onClickButton(SQUARE_BUTTON)
-        }
-        circleButton.setOnClickListener {
-            onClickButton(CIRCLE_BUTTON)
-        }
-        crossButton.setOnClickListener {
-            onClickButton(CROSS_BUTTON)
+        doForwardButton.setOnClickListener {
+            onClickButton(DEST1_BUTTON)
         }
     }
 
@@ -82,7 +73,8 @@ class OperationActivity : AppCompatActivity(), Mixin {
 
     private fun setUpMQTT() {
         val context = this
-        val schema = sharedPref?.getBoolean(getString(R.string.settings_item_mqtt_use_ssl_key), false)?.let{if (it) "ssl" else "tcp"} ?: "tcp"
+        val schema = sharedPref?.getBoolean(getString(R.string.settings_item_mqtt_use_ssl_key), false)?.let { if (it) "ssl" else "tcp" }
+                ?: "tcp"
         val host = sharedPref?.getString(getString(R.string.settings_item_mqtt_host_key), "") ?: ""
         val port = sharedPref?.getString(getString(R.string.settings_item_mqtt_port_key), "") ?: ""
         val url = "$schema://$host:$port"
@@ -92,7 +84,7 @@ class OperationActivity : AppCompatActivity(), Mixin {
             AlertDialog.Builder(context)
                     .setTitle("MQTT接続失敗")
                     .setMessage("不正なURL, url = $url")
-                    .setPositiveButton("ok"){ _, _ ->
+                    .setPositiveButton("ok") { _, _ ->
                     }.show()
             return
         }
@@ -123,7 +115,7 @@ class OperationActivity : AppCompatActivity(), Mixin {
                 AlertDialog.Builder(context)
                         .setTitle("MQTT接続失敗")
                         .setMessage("url = $url, $throwable")
-                        .setPositiveButton("ok"){ _, _ ->
+                        .setPositiveButton("ok") { _, _ ->
                         }.show()
             }
         })
@@ -136,10 +128,11 @@ class OperationActivity : AppCompatActivity(), Mixin {
 
     private fun publish(move: String) {
         val c = client ?: return
-        val baseTopic = sharedPref?.getString(getString(R.string.settings_item_mqtt_base_topic_key), "") ?: ""
+        val baseTopic = sharedPref?.getString(getString(R.string.settings_item_mqtt_base_topic_key), "")
+                ?: ""
         if (c.isConnected) {
             val dt = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"))
-            val msg = "${DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(dt)}|button|$move"
+            val msg = "${DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(dt)}|move|$move"
             c.publish("$baseTopic/attrs", msg.toByteArray(), 0, false)
             Log.d(TAG, "published $msg")
         } else {
@@ -147,8 +140,9 @@ class OperationActivity : AppCompatActivity(), Mixin {
             AlertDialog.Builder(this)
                     .setTitle("MQTT未接続")
                     .setMessage("MQTTに接続していません")
-                    .setPositiveButton("ok"){ _, _ ->
+                    .setPositiveButton("ok") { _, _ ->
                     }.show()
         }
     }
+
 }

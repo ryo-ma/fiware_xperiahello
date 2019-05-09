@@ -6,75 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".OperationActivity">
 
-    <TextView
-        android:id="@+id/operationTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="63dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center"
-        android:text="@string/main_title"
-        android:textSize="@dimen/mainTitleSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/triangleButton"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/triangle_button"
-        android:scaleType="centerCrop"
-        android:src="@drawable/triangle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/operationTitle" />
+        <TextView
+            android:id="@+id/operationTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:text="@string/main_title"
+            android:textSize="@dimen/mainTitleSize" />
 
-    <ImageButton
-        android:id="@+id/squareButton"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/square_button"
-        android:scaleType="centerCrop"
-        android:src="@drawable/square"
-        app:layout_constraintEnd_toStartOf="@+id/circleButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/triangleButton" />
+        <ImageButton
+            android:id="@+id/doForwardButton"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/cross_button"
+            android:scaleType="centerCrop"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/circleButton"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/circle_button"
-        android:scaleType="centerCrop"
-        android:src="@drawable/circle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/squareButton"
-        app:layout_constraintTop_toBottomOf="@+id/triangleButton" />
-
-    <ImageButton
-        android:id="@+id/crossButton"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/cross_button"
-        android:scaleType="centerCrop"
-        android:src="@drawable/cross"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleButton" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,4 +1,4 @@
-package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_conveyer
+package jp.co.tis.stc.roboticbase.core.fiware_xperiahello_guide
 
 import android.app.Activity
 import android.app.Application
@@ -8,7 +8,6 @@ import android.os.Build
 import android.preference.PreferenceManager
 import androidx.test.core.app.ApplicationProvider
 import com.nhaarman.mockito_kotlin.*
-import kotlinx.android.synthetic.main.activity_operation.*
 import org.eclipse.paho.android.service.MqttAndroidClient
 import org.junit.Assert.*
 import org.junit.Before
