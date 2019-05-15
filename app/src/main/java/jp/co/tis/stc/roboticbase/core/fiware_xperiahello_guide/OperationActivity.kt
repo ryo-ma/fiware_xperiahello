@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -108,6 +109,15 @@ class OperationActivity : AppCompatActivity(), Mixin {
         client?.connect(options, null, object : IMqttActionListener {
             override fun onSuccess(iMqttToken: IMqttToken) {
                 Log.d(TAG, "connect success, url = $url")
+                val handler = Handler()
+                val r = object : Runnable {
+                    override fun run() {
+                        handler.postDelayed(this, 200)
+                        progressBar.visibility = View.INVISIBLE
+                        doForwardButton.visibility = View.VISIBLE
+                    }
+                }
+                handler.post(r)
             }
 
             override fun onFailure(iMqttToken: IMqttToken, throwable: Throwable) {
