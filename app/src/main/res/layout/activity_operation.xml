@@ -11,25 +11,34 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <TextView
             android:id="@+id/operationTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:gravity="center"
-            android:text="@string/main_title"
+            android:text="@string/description"
             android:textSize="@dimen/mainTitleSize" />
 
-        <ImageButton
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
             android:id="@+id/doForwardButton"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
-            android:contentDescription="@string/cross_button"
-            android:scaleType="centerCrop"
-            tools:ignore="MissingConstraints" />
+            android:text="行き先1"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            tools:srcCompat="@drawable/dest1" />
+
+
     </LinearLayout>
 
 
